@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="/css/application.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
+    <header class="page-title">
+      <h1>
+        UP Global Projects List
+      </h1>
+    </header>
+
     <section id="projects" ng-controller="ProjectsController">
-      <h1>{{ greeting }}</h1>
       <div class="project" ng-repeat="project in projects">
-        <h2>
-          <span class="project__status">
-            {{ project.Status}}
+        <h2 class="project__name">
+          <span class="project__status {{ project.Status }}">
+            {{ project.symbol }}
           </span>
+
           {{ project.ProjectName }}
         </h2>
       </div>

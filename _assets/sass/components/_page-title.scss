@@ -1,0 +1,10 @@
+.page-title {
+  @include row();
+
+  background-color: $accent-color;
+
+  h1 {
+    text-align: center;
+    color: $accent-copy-color;
+  }
+}

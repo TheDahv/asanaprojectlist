@@ -1,0 +1,9 @@
+$accent-color: #30d67d;
+$accent-copy-color: #ffffff;
+$copy-color: #333333;
+$accent-off-color: #f4f4f4;
+
+$status-green: $accent-color;
+$status-yellow:  lighten(yellow, 20%);
+$status-red:     lighten(red,    20%);
+$status-unknown: lighten(orange, 20%);

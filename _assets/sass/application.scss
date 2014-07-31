@@ -1,8 +1,13 @@
+@import "normalize";
 @import "bourbon/bourbon";
 @import "neat/neat";
 
+@import "variables";
+
 @import "typography";
+@import "components";
 
 body {
   @include outer-container();
+  background-color: $accent-off-color;
 }

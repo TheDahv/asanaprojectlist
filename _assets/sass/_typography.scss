@@ -1,6 +1,20 @@
 h1, h2, h3, h4 {
   font-family: raleway, sans-serif;
+  color: $copy-color;
 }
 body {
-  font-family: pt-sans, sans-serif;  
+  font-family: pt-sans, sans-serif;
+  color: $copy-color;
+}
+a {
+   color: $accent-color;
+   &:visited, &:active {
+     color: $accent-color;
+   }
+
+   @include transition(color 0.8s linear);
+
+   &:hover {
+     color: darken($accent-color, 10%);
+   }
 }

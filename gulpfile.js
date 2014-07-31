@@ -25,5 +25,5 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function () {
   gulp.watch(['_assets/sass/**/*.scss'], ['sass']);
-  gulp.watch(['_assets/js/**/*.scss'], ['scripts']);
+  gulp.watch(['_assets/js/**/*.js'], ['scripts']);
 });

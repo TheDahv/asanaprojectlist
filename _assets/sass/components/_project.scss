@@ -1,0 +1,57 @@
+.project {
+  @include row();
+  $icon-size: 2em;
+  background-color: #ffffff;
+
+  padding-left:  1.0em;
+  padding-right: 1.0em;
+
+  border-bottom: 1px solid $accent-off-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .project__name {
+    line-height: $icon-size;
+  }
+
+  .project__status {
+    float: left;
+    display: inline-block;
+
+    height:      $icon-size;
+    width:       $icon-size;
+    border-radius: 50%;
+    line-height: $icon-size;
+
+    text-align: center;
+    color: #ffffff;
+
+    margin-right: 0.5em;
+
+    @each $symbol in (G, Y, R) {
+      &.#{ $symbol } {
+        @include transform(rotate(90deg));
+      }
+    }
+
+    &.G {
+      background-color: $status-green;
+    }
+    &.Y {
+      background-color: $status-yellow;
+      color: #333333;
+    }
+    &.R {
+      background-color: $status-red;
+    }
+    &.Unknown {
+      background-color: $status-unknown;
+    }
+  }
+
+  .project__name {
+    @include span-columns(11);
+  }
+}
