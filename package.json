@@ -1,0 +1,27 @@
+{
+  "name": "asanaprojectlist",
+  "version": "0.0.0",
+  "description": "Assuming you use Asana on a large enough team, you may find yourself tracking so many projects that it becomes difficult to find signal in the noise.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.8.6",
+    "gulp-sass": "~0.7.1",
+    "gulp-sourcemaps": "~1.1.0",
+    "gulp-concat": "~2.3.4",
+    "gulp-watch": "~0.6.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TheDahv/asanaprojectlist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheDahv/asanaprojectlist/issues"
+  },
+  "homepage": "https://github.com/TheDahv/asanaprojectlist"
+}

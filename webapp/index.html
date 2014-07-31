@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 
-<html>
+<html ng-app="asanaProjectsViewer">
   <head>
-    <title></title>
+    <title>UP Global - Projects</title>
 
+    <script src="//use.edgefonts.net/raleway;pt-sans.js"></script>
     <link rel="stylesheet" href="/css/application.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <h1>Hello Asana</h1>
-
+    <section id="projects" ng-controller="ProjectsController">
+      <h1>{{ greeting }}</h1>
+      <div class="project" ng-repeat="project in projects">
+        <h2>
+          <span class="project__status">
+            {{ project.Status}}
+          </span>
+          {{ project.ProjectName }}
+        </h2>
+      </div>
+    </section>
     <script src="/js/application.js"></script>
   </body>
 </html>
