@@ -15,10 +15,28 @@
     </header>
 
     <section id="projects" ng-controller="ProjectsController">
-      <div class="project" ng-repeat="project in projects">
+      <div id="filters">
+        <div class="project-view-control">
+          <label for="sortControl">
+            Sort By:
+            <select name="sortControl" ng-model="orderProp">
+              <option value="Position" selected="selected">Position</option>
+              <option value="Status">Status</option>
+            </select>
+          </label>
+        </div>
+
+
+      </div>
+
+      <div class="project" ng-repeat="project in projects | orderBy:orderProp">
         <h2 class="project__name">
           <span class="project__status {{ project.Status }}">
-            {{ project.symbol }}
+            {{ project.Symbol }}
+          </span>
+
+          <span class="project__position">
+            #{{ project.Position }} &ndash;
           </span>
 
           {{ project.ProjectName }}
