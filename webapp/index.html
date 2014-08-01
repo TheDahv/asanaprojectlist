@@ -12,24 +12,36 @@
       <h1>
         UP Global Projects List
       </h1>
-    </header>
+    </header><!-- .page-title -->
 
     <section id="projects" ng-controller="ProjectsController">
       <div id="filters">
         <div class="project-view-control">
+          <label for="projectStatusFilterControl">
+            Project Status:
+            <select name="projectStatusFilterControl" ng-model="projectFilter.Status">
+              <option value="">All</option>
+              <option value="G">Good</option>
+              <option value="Y">Needs Help</option>
+              <option value="R">Blocked</option>
+              <option value="Unknown">Unknown</option>
+            </select>
+          </label>
+        </div><!-- .project-view-control -->
+
+        <div class="project-view-control">
           <label for="sortControl">
-            Sort By:
+            Project Order:
             <select name="sortControl" ng-model="orderProp">
               <option value="Position" selected="selected">Position</option>
               <option value="Status">Status</option>
             </select>
           </label>
-        </div>
+        </div><!-- .project-view-control -->
 
+      </div><!-- #filters -->
 
-      </div>
-
-      <div class="project" ng-repeat="project in projects | orderBy:orderProp">
+      <div class="project" ng-repeat="project in projects | filter:projectFilter | orderBy:orderProp">
         <h2 class="project__name">
           <span class="project__status {{ project.Status }}">
             {{ project.Symbol }}
@@ -41,8 +53,8 @@
 
           {{ project.ProjectName }}
         </h2>
-      </div>
-    </section>
+      </div><!-- .project -->
+    </section><!-- #projects -->
     <script src="/js/application.js"></script>
   </body>
 </html>
