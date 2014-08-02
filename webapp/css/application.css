@@ -435,18 +435,23 @@ a {
   transition: all 0.8s ease-in; }
   .vertical-drawer .drawer-contents {
     text-align: center;
-    padding: 2em;
     background-color: #ffffff; }
+    .vertical-drawer .drawer-contents * {
+      margin-top: 1em;
+      margin-bottom: 1em; }
   .vertical-drawer .drawer-handle {
     text-align: center; }
     .vertical-drawer .drawer-handle a {
+      font-weight: 700;
       display: inline-block;
       background-color: #ffffff;
       cursor: pointer;
       padding-left: 1em;
       padding-right: 1em;
       border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px; }
+      border-bottom-right-radius: 8px;
+      height: 2em;
+      line-height: 2em; }
 
 body {
   *zoom: 1;

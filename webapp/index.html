@@ -16,7 +16,7 @@
 
     <section id="projects" ng-controller="ProjectsController">
       <div id="filters" class="vertical-drawer">
-        <div class="drawer-contents" ng-show="drawerActive">
+        <div id="project-filters" class="drawer-contents slideable" easing="ease-in-out" duration="0.4s">
           <div class="project-view-control">
             <select name="projectStatusFilterControl" ng-model="projectFilter.Status">
               <option value="">All Projects</option>
@@ -37,7 +37,7 @@
 
 
         <div class="drawer-handle">
-          <a ng-click="toggleDrawer()">Project View Options</a>
+          <a slide-toggle="#project-filters">Project View Options</a>
         </div><!-- .drawer-handle -->
       </div><!-- #filters -->
 

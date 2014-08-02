@@ -8,7 +8,7 @@
     }
   };
 
-  angular.module('asanaProjectsViewer', [])
+  angular.module('asanaProjectsViewer', ['angularSlideables'])
     .controller('ProjectsController',
     ['$scope', '$http', function ($scope, $http) {
       $http.get('/projects').success(function (projects) {
