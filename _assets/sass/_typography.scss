@@ -2,7 +2,7 @@ h1, h2, h3, h4 {
   font-family: raleway, sans-serif;
   color: $copy-color;
 }
-body {
+body, select, option, input, textarea {
   font-family: pt-sans, sans-serif;
   color: $copy-color;
 }

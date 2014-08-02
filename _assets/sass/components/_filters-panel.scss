@@ -1,0 +1,35 @@
+#filters {
+  .project-view-control {
+    display: inline-block;
+  }
+  margin-bottom: 1em;
+}
+
+.vertical-drawer {
+  $drawer-bg-color: #ffffff;
+
+  @include transition (all 0.8s ease-in);
+  .drawer-contents {
+    text-align: center;
+    padding: 2em;
+    background-color: $drawer-bg-color;
+  }
+
+  .drawer-handle {
+    text-align: center;
+
+    a {
+      display: inline-block;
+      background-color: $drawer-bg-color;
+
+      cursor: pointer;
+
+      padding-left: 1em;
+      padding-right: 1em;
+
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+
+}

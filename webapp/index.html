@@ -15,30 +15,30 @@
     </header><!-- .page-title -->
 
     <section id="projects" ng-controller="ProjectsController">
-      <div id="filters">
-        <div class="project-view-control">
-          <label for="projectStatusFilterControl">
-            Project Status:
+      <div id="filters" class="vertical-drawer">
+        <div class="drawer-contents" ng-show="drawerActive">
+          <div class="project-view-control">
             <select name="projectStatusFilterControl" ng-model="projectFilter.Status">
-              <option value="">All</option>
-              <option value="G">Good</option>
-              <option value="Y">Needs Help</option>
-              <option value="R">Blocked</option>
-              <option value="Unknown">Unknown</option>
+              <option value="">All Projects</option>
+              <option value="G">Healthy Projects</option>
+              <option value="Y">Slow Projects</option>
+              <option value="R">Blocked Projects</option>
+              <option value="Unknown">Unknown Status Projects</option>
             </select>
-          </label>
-        </div><!-- .project-view-control -->
+          </div><!-- .project-view-control -->
 
-        <div class="project-view-control">
-          <label for="sortControl">
-            Project Order:
+          <div class="project-view-control">
             <select name="sortControl" ng-model="orderProp">
-              <option value="Position" selected="selected">Position</option>
-              <option value="Status">Status</option>
+              <option value="Position" selected="selected">Sorted by Priority</option>
+              <option value="ProjectName">Sorted by Name</option>
             </select>
-          </label>
-        </div><!-- .project-view-control -->
+          </div><!-- .project-view-control -->
+        </div><!-- .drawer-contents -->
 
+
+        <div class="drawer-handle">
+          <a ng-click="toggleDrawer()">Project View Options</a>
+        </div><!-- .drawer-handle -->
       </div><!-- #filters -->
 
       <div class="project" ng-repeat="project in projects | filter:projectFilter | orderBy:orderProp">

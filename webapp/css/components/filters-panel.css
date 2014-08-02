@@ -1,0 +1,10 @@
+#filters {
+  padding-top: 2em;
+  padding-bottom: 2em; }
+  #filters .project-view-control {
+    display: inline-block; }
+  #filters.closed {
+    padding: 0;
+    margin: 0;
+    height: 0;
+    overflow: hidden; }

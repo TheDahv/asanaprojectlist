@@ -22,7 +22,11 @@
         });
       });
 
-      $scope.greeting = "Hello Asana!";
       $scope.orderProp = "Position";
+
+      $scope.drawerActive = false;
+      $scope.toggleDrawer = function () {
+        $scope.drawerActive = !$scope.drawerActive;
+      };
     }]);
 })(window.angular);

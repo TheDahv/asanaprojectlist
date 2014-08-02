@@ -328,7 +328,7 @@ h1, h2, h3, h4 {
   font-family: raleway, sans-serif;
   color: #333333; }
 
-body {
+body, select, option, input, textarea {
   font-family: pt-sans, sans-serif;
   color: #333333; }
 
@@ -415,6 +415,38 @@ a {
   .page-title h1 {
     text-align: center;
     color: #ffffff; }
+
+.project-view-control select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 2em;
+  line-height: 2em;
+  padding-left: 1em;
+  padding-right: 1em; }
+
+#filters {
+  margin-bottom: 1em; }
+  #filters .project-view-control {
+    display: inline-block; }
+
+.vertical-drawer {
+  -webkit-transition: all 0.8s ease-in;
+  -moz-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in; }
+  .vertical-drawer .drawer-contents {
+    text-align: center;
+    padding: 2em;
+    background-color: #ffffff; }
+  .vertical-drawer .drawer-handle {
+    text-align: center; }
+    .vertical-drawer .drawer-handle a {
+      display: inline-block;
+      background-color: #ffffff;
+      cursor: pointer;
+      padding-left: 1em;
+      padding-right: 1em;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px; }
 
 body {
   *zoom: 1;
