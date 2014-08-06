@@ -1,15 +1,19 @@
 .project {
-  @include row();
   $icon-size: 2em;
   background-color: #ffffff;
 
-  padding-left:  1.0em;
-  padding-right: 1.0em;
+  padding-left:   1.0em;
+  padding-right:  1.0em;
+  padding-bottom: 2.0em;
 
   border-bottom: 1px solid $accent-off-color;
 
   &:last-child {
     border-bottom: none;
+  }
+
+  .project__summary {
+    @include row();
   }
 
   .project__name {
@@ -53,5 +57,9 @@
 
   .project__name {
     @include span-columns(11);
+  }
+
+  .project__links {
+    @include row();
   }
 }
