@@ -37,13 +37,16 @@
           </div><!-- .project-view-control -->
         </div><!-- .drawer-contents -->
 
-
         <div class="drawer-handle">
           <a slide-toggle="#project-filters">Project View Options</a>
         </div><!-- .drawer-handle -->
       </div><!-- #filters -->
 
-      <div class="project" ng-repeat="project in projects | filter:projectFilter | orderBy:orderProp">
+      <div class="project"
+         ng-repeat="project in projects | filter:projectFilter | orderBy:orderProp"
+         ng-controller="ProjectItemController"
+         >
+
         <div class="project__summary">
           <h2 class="project__name">
             <span class="project__status {{ project.Status }}">
@@ -61,7 +64,32 @@
 
         <div class="project__links">
           <a href="https://app.asana.com/0/{{ project.ID }}" target="_blank">[View in Asana]</a>
+          <a href="#" ng-click="toggleDetails(project)" >[Show More Details]</a>
         </div><!-- .project__links -->
+
+        <div class="project__details" ng-show="project.showDetails">
+          <p><b>Notes:</b></p>
+          <p>
+            {{ project.details.Notes }}
+          </p>
+
+          <p><b>Owners:</b></p>
+          <ul>
+            <li ng-repeat="member in project.details.Members">
+              {{ member.Name }}
+            </li>
+          </ul>
+
+          <p><b>Tasks:</b></p>
+          <ul>
+            <li
+              ng-repeat="task in project.details.Tasks"
+              class="project__task {{ task.Completed ? 'completed' : '' }}"
+              >
+              {{ task.Name }}
+            </li>
+          </ul>
+        </div>
 
       </div><!-- .project -->
     </section><!-- #projects -->

@@ -11,6 +11,7 @@ import (
 func SetupRoutes() *mux.Router {
   r := mux.NewRouter()
 	r.HandleFunc("/projects", projectsHandler)
+	r.HandleFunc("/projects/{projectID}", projectDetailsHandler)
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./webapp")))
 
   return r
@@ -29,6 +30,18 @@ func projectsHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	output, _ := json.Marshal(projects)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(output)
+}
+
+func projectDetailsHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	projectID := vars["projectID"]
+
+	projectDetails := GetProjectDetails(projectID)
+
+	output, _ := json.Marshal(projectDetails)
+
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(output)
 }

@@ -28,5 +28,19 @@
       $scope.toggleDrawer = function () {
         $scope.drawerActive = !$scope.drawerActive;
       };
+    }])
+    .controller('ProjectItemController',
+    ['$scope', '$http', function ($scope, $http) {
+      $scope.toggleDetails = function (project) {
+        $scope.project.showDetails = !$scope.project.showDetails;
+
+        if (!$scope.project.details) {
+          $http.get('/projects/' + project.ID).success(function (details) {
+            $scope.project.details = details;
+          });
+        }
+      };
+
     }]);
+
 })(window.angular);

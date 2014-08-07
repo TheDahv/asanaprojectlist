@@ -62,4 +62,11 @@
   .project__links {
     @include row();
   }
+
+  .project__task {
+    &.completed {
+      font-style: italic;
+      text-decoration: line-through;
+    }
+  }
 }

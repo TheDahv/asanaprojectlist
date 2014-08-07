@@ -412,6 +412,9 @@ a {
       display: table; }
     .project .project__links:after {
       clear: both; }
+  .project .project__task.completed {
+    font-style: italic;
+    text-decoration: line-through; }
 
 .page-title {
   *zoom: 1;
