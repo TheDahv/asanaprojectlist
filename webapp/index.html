@@ -64,7 +64,7 @@
 
         <div class="project__links">
           <a href="https://app.asana.com/0/{{ project.ID }}" target="_blank">[View in Asana]</a>
-          <a href="#" ng-click="toggleDetails(project)" >[Show More Details]</a>
+          <a href="#" ng-click="toggleDetails(project)" >[{{ project.showDetails ? "Hide Details" : "Show More Details" }}]</a>
         </div><!-- .project__links -->
 
         <div class="project__details" ng-show="project.showDetails">
