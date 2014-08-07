@@ -40,7 +40,7 @@
           });
         }
 
-        if (false && !$scope.project.tasks) {
+        if (!$scope.project.tasks) {
           $http.get('/projects/' + project.ID + '/tasks').success(function (tasks) {
             $scope.project.tasks = tasks;
           });
