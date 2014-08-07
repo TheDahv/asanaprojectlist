@@ -2,7 +2,6 @@ package models
 
 // AssigneeInfo - The information about the owner of the task
 type AssigneeInfo struct {
-  ID int
   Name string
 }
 

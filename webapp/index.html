@@ -102,6 +102,9 @@
               <a href="https://app.asana.com/0/{{ project.ID }}/{{ task.ID }}" target="_blank">
                 {{ task.Name }}
               </a>
+              <span ng-show="task.Assignee.Name">
+               &ndash; {{ task.Assignee.Name }}
+              </span>
             </li>
           </ul>
         </div>
