@@ -97,7 +97,7 @@
           <ul>
             <li
               ng-repeat="task in project.tasks"
-              class="project__task {{ task.Completed ? 'completed' : '' }} {{ 'section' | ifMatch:':$'}}"
+              class="project__task {{ task.Completed ? 'completed' : '' }} {{ task.Name | outputIfMatch:':$':'section'}}"
               >
               {{ task.Name }}
             </li>

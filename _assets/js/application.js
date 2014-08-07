@@ -51,13 +51,13 @@
         event.stopPropagation();
       };
     }])
-    .filter('ifMatch', function () {
-      return function (input, rxPattern) {
+    .filter('outputIfMatch', function () {
+      return function (input, rxPattern, output) {
         var rx = new RegExp(rxPattern, "i");
         input = input || '';
 
         if (rx.test(input)) {
-          return input;
+          return output;
         } else {
           return '';
         }
