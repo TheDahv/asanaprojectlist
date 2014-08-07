@@ -99,7 +99,9 @@
               ng-repeat="task in project.tasks"
               class="project__task {{ task.Completed ? 'completed' : '' }} {{ task.Name | outputIfMatch:':$':'section'}}"
               >
-              {{ task.Name }}
+              <a href="https://app.asana.com/0/{{ project.ID }}/{{ task.ID }}" target="_blank">
+                {{ task.Name }}
+              </a>
             </li>
           </ul>
         </div>
