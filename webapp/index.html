@@ -81,10 +81,21 @@
           <p><b>Owners:</b></p>
           <div class="loading" ng-hide="project.details.Members.length > 0">
             Loading... <i class="fa fa-spinner fa-spin"></i>
-          </div
+          </div>
           <ul>
             <li ng-repeat="member in project.details.Members">
               {{ member.Name }}
+            </li>
+          </ul>
+
+          <p><b>Contributors:</b></p>
+          <div class="loading" ng-hide="project.taskContributors.length > 0">
+            Loading... <i class="fa fa-spinner fa-spin"></i>
+          </div>
+          <ul>
+            <li
+              ng-repeat="contributor in project.taskContributors">
+              {{ contributor.Name }} - {{ contributor.TaskCount }}
             </li>
           </ul>
 

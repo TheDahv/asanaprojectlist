@@ -1,4 +1,4 @@
-(function (angular) {
+(function (angular, _) {
   var statusToSymbol = function (project) {
     switch (project.Status.toLowerCase()) {
       case 'r': return ':(';
@@ -43,6 +43,25 @@
         if (!$scope.project.tasks) {
           $http.get('/projects/' + project.ID + '/tasks').success(function (tasks) {
             $scope.project.tasks = tasks;
+
+            $scope.project.taskContributors = _.chain(tasks)
+              .filter(function (task) {
+                return task.Assignee && task.Assignee.Name.length > 0;
+              })
+              .groupBy(function (task) {
+                return task.Assignee.Name;
+              })
+              .map(function (taskGroup) {
+                return {
+                  Name: taskGroup[0].Assignee.Name,
+                  TaskCount: taskGroup.length
+                };
+              })
+              .sortBy(function (taskGroup) {
+                // Reverse order sort by task length
+                return -1 * taskGroup.TaskCount;
+              })
+              .value();
           });
         }
 
@@ -64,4 +83,4 @@
       };
     });
 
-})(window.angular);
+})(window.angular, window._);
