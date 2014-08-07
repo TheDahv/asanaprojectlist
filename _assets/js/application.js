@@ -40,13 +40,26 @@
           });
         }
 
-        if (!$scope.project.tasks) {
+        if (false && !$scope.project.tasks) {
           $http.get('/projects/' + project.ID + '/tasks').success(function (tasks) {
             $scope.project.tasks = tasks;
           });
         }
-      };
 
-    }]);
+        return false;
+      };
+    }])
+    .filter('ifMatch', function () {
+      return function (input, rxPattern) {
+        var rx = new RegExp(rxPattern, "i");
+        input = input || '';
+
+        if (rx.test(input)) {
+          return input;
+        } else {
+          return '';
+        }
+      };
+    });
 
 })(window.angular);
