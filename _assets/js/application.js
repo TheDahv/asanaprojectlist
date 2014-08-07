@@ -46,7 +46,9 @@
           });
         }
 
-        return false;
+        // Who knows how this actually gets into scope...
+        event.preventDefault();
+        event.stopPropagation();
       };
     }])
     .filter('ifMatch', function () {
