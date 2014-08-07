@@ -39,6 +39,12 @@
             $scope.project.details = details;
           });
         }
+
+        if (!$scope.project.tasks) {
+          $http.get('/projects/' + project.ID + '/tasks').success(function (tasks) {
+            $scope.project.tasks = tasks;
+          });
+        }
       };
 
     }]);

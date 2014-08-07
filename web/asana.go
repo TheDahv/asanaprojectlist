@@ -108,6 +108,12 @@ func GetProjectDetails(projectID string) m.ProjectDetails {
     panic(err.Error())
   }
 
+  return responseData.Data
+}
+
+// GetProjectTasks - Given a project, download the list of tasks and then
+// load the task details for each
+func GetProjectTasks(projectID string) []m.ProjectTask {
   // Get list of IDs
   idsList := getProjectTaskIDS(projectID)
 
@@ -132,7 +138,5 @@ func GetProjectDetails(projectID string) m.ProjectDetails {
   // Wait for each goroutine on the channel to ping back
   for i := 0; i < tasksLength; i++ { <- sem }
 
-  responseData.Data.Tasks = projectTaskDetails
-
-  return responseData.Data
+  return projectTaskDetails
 }
