@@ -111,13 +111,26 @@ func GetProjectDetails(projectID string) m.ProjectDetails {
   // Get list of IDs
   idsList := getProjectTaskIDS(projectID)
 
-  // Expand the list of project tasks
-  var projectTaskDetails []m.ProjectTask
+  // Concurrently expand the list of project tasks
+  tasksLength := len(idsList)
 
-  for _, task := range idsList {
-    taskDetail := getProjectTaskDetail(task.ID)
-    projectTaskDetails = append(projectTaskDetails, taskDetail)
+  type empty struct {}                    // Semaphore for timing and sequencing
+  sem := make(chan empty, tasksLength)    // as we are loading tasks
+
+  // Empty slice to hold our tasks details
+  projectTaskDetails := make([]m.ProjectTask, tasksLength)
+
+  for i, task := range idsList {
+    // Spin up a goroutine as a closure over the
+    // results slice and loop through each task
+    go func (i int, taskID int) {
+      projectTaskDetails[i] = getProjectTaskDetail(taskID)
+      // Ping back on the channel when it is done
+      sem <- empty{}
+    } (i, task.ID)
   }
+  // Wait for each goroutine on the channel to ping back
+  for i := 0; i < tasksLength; i++ { <- sem }
 
   responseData.Data.Tasks = projectTaskDetails
 
