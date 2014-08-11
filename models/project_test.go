@@ -12,6 +12,13 @@ func makeBadProject() Project {
   return Project{ ID: 134, Name: "Not a real project" }
 }
 
+func makeUnknownStatusProject() Project {
+  return Project{ ID: 1234, Name: "[.] Unknown Status Project" }
+}
+func makeDoneProject() Project {
+  return Project{ ID: 1234, Name: "[!] Done Status Project" }
+}
+
 func TestGetName(t *testing.T) {
   name := makeGoodProject().GetName()
 
@@ -25,6 +32,22 @@ func TestGetStatus(t *testing.T) {
 
   if status != "G" {
     t.Error("Expected 'G', got ", status)
+  }
+}
+
+func TestUnexpectedStatus(t *testing.T) {
+  status := makeUnknownStatusProject().GetStatus()
+
+  if status != "Unknown" {
+    t.Error("Expected 'Unknown', got ", status)
+  }
+}
+
+func TestDoneStatus(t *testing.T) {
+  status := makeDoneProject().GetStatus()
+
+  if status != "Done" {
+    t.Error("Expected 'Done', got ", status)
   }
 }
 

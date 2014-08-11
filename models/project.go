@@ -53,11 +53,16 @@ func (p Project) GetName() string {
 
 // GetStatus - Project#GetStatus parses the project's status from the data
 func (p Project) GetStatus() string {
-  status := getFirstMatch("^\\[([R|Y|G])\\] .*$", p.Name)
+  status := getFirstMatch("^\\[([R|Y|G|!])\\] .*$", p.Name)
 
   if status == "" {
     return "Unknown"
   }
+
+  if status == "!" {
+    return "Done"
+  }
+
   return status
 }
 

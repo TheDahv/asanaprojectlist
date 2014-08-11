@@ -50,6 +50,9 @@
     &.R {
       background-color: $status-red;
     }
+    &.Done {
+      background-color: $status-grey;
+    }
     &.Unknown {
       background-color: $status-unknown;
     }

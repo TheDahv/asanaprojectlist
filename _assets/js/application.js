@@ -4,6 +4,7 @@
       case 'r': return ':(';
       case 'y': return ':|';
       case 'g': return ':)';
+      case 'done': return ':D';
       case 'unknown': return '?';
     }
   };

@@ -1889,6 +1889,8 @@ a {
       color: #333333; }
     .project .project__status.R {
       background-color: #ff6666; }
+    .project .project__status.Done {
+      background-color: #b3b3b3; }
     .project .project__status.Unknown {
       background-color: #ffc766; }
   .project .project__name {
