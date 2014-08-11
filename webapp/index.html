@@ -35,6 +35,10 @@
               <option value="ProjectName">Sorted by Name</option>
             </select>
           </div><!-- .project-view-control -->
+
+          <p>
+            <a href="#completed">View Completed Projects</a>
+          </p>
         </div><!-- .drawer-contents -->
 
         <div class="drawer-handle">
@@ -120,7 +124,31 @@
           </ul>
         </div>
 
-      </div><!-- .project -->
+      </div><!-- .project ng-repeat -->
+
+      <div class="completedProjects">
+        <h1 id="completed">Completed</h1>
+
+        <div class="project" ng-repeat="project in completedProjects">
+          <div class="project__summary">
+            <h2 class="project__name">
+              <span class="project__status {{ project.Status }}">
+                {{ project.Symbol }}
+              </span>
+
+              {{ project.ProjectName }}
+            </h2>
+          </div><!-- .project__summary -->
+
+          <div class="project__links">
+            <a href="https://app.asana.com/0/{{ project.ID }}" target="_blank">[View in Asana]</a>
+          </div><!-- .project__links -->
+
+        </div><!-- .project -->
+
+      </div><!-- .completedProjects -->
+
+
     </section><!-- #projects -->
     <script src="/js/application.js"></script>
   </body>

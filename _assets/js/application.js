@@ -14,13 +14,20 @@
     ['$scope', '$http', function ($scope, $http) {
       $http.get('/projects').success(function (projects) {
         var positionCounter = 1;
-
-        $scope.projects = projects.map(function (p) {
+        var prepareProject = function (p) {
           p.Symbol = statusToSymbol(p);
           p.Position = positionCounter;
           positionCounter++;
           return p;
-        });
+        };
+
+        $scope.projects = projects
+          .filter(function (p) { return p.Status !== "Done"; })
+          .map(prepareProject)
+
+        $scope.completedProjects = projects
+          .filter(function (p) { return p.Status === "Done"; })
+          .map(prepareProject);
       });
 
       $scope.orderProp = "Position";
