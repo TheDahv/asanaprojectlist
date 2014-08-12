@@ -1836,6 +1836,14 @@ a {
   a:hover {
     color: #23b062; }
 
+#projects .project:nth-child(11) {
+  border-bottom-width: 3px;
+  border-bottom-color: #666666; }
+
+#projects .project:nth-child(16) {
+  border-bottom-width: 3px;
+  border-bottom-color: #b3b3b3; }
+
 .project {
   background-color: #ffffff;
   padding-left: 1em;

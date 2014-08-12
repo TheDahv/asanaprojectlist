@@ -1,3 +1,15 @@
+// Top 10 border
+#projects .project:nth-child(11) {
+  border-bottom-width: 3px;
+  border-bottom-color: lighten(#333333, 20%);
+}
+
+// Top 15 border
+#projects .project:nth-child(16) {
+  border-bottom-width: 3px;
+  border-bottom-color: lighten(#333333, 50%);
+}
+
 .project {
   $icon-size: 2em;
   background-color: #ffffff;
