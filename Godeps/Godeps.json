@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/thedahv/asanaprojectlist",
+	"ImportPath": "github.com/startupweekend/asanaprojectlist",
 	"GoVersion": "go1.3",
 	"Deps": [
 		{

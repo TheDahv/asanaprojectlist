@@ -3,7 +3,7 @@ package web
 import (
 	"code.google.com/p/gorilla/mux"
 	"net/http"
-	m "github.com/thedahv/asanaprojectlist/models"
+	m "github.com/startupweekend/asanaprojectlist/models"
 	"encoding/json"
 )
 

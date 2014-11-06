@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-	w "github.com/thedahv/asanaprojectlist/web"
+	w "github.com/startupweekend/asanaprojectlist/web"
 	"net/http"
   "github.com/spf13/viper"
 	r "regexp"
