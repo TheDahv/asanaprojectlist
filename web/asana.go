@@ -3,7 +3,7 @@ import (
   "net/http"
   "io/ioutil"
   "encoding/json"
-  m "github.com/thedahv/asanaprojectlist/models"
+  m "github.com/startupweekend/asanaprojectlist/models"
   "github.com/spf13/viper"
   "strconv"
 )

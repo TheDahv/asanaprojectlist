@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/TheDahv/asanaprojectlist.git"
+    "url": "git://github.com/startupweekend/asanaprojectlist.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TheDahv/asanaprojectlist/issues"
+    "url": "https://github.com/startupweekend/asanaprojectlist/issues"
   },
-  "homepage": "https://github.com/TheDahv/asanaprojectlist"
+  "homepage": "https://github.com/startupweekend/asanaprojectlist"
 }
