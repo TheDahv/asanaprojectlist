@@ -1,21 +1,22 @@
 package web
 
 import (
-	"code.google.com/p/gorilla/mux"
-	"net/http"
-	m "github.com/startupweekend/asanaprojectlist/models"
 	"encoding/json"
+	"net/http"
+
+	"code.google.com/p/gorilla/mux"
+	m "github.com/startupweekend/asanaprojectlist/models"
 )
 
 // SetupRoutes returns a router with all routes defined
 func SetupRoutes() *mux.Router {
-  r := mux.NewRouter()
+	r := mux.NewRouter()
 	r.HandleFunc("/projects", projectsHandler)
 	r.HandleFunc("/projects/{projectID}/tasks", projectTasksHandler)
 	r.HandleFunc("/projects/{projectID}", projectDetailsHandler)
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./webapp")))
 
-  return r
+	return r
 }
 
 func projectsHandler(w http.ResponseWriter, r *http.Request) {
