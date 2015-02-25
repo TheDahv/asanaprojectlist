@@ -2,11 +2,12 @@ package main
 
 import (
 	"log"
-	"os"
-	w "github.com/startupweekend/asanaprojectlist/web"
 	"net/http"
-  "github.com/spf13/viper"
+	"os"
 	r "regexp"
+
+	"github.com/spf13/viper"
+	w "github.com/startupweekend/asanaprojectlist/web"
 )
 
 func getAppMode() string {
@@ -67,5 +68,5 @@ func main() {
 	}
 
 	log.Println("Listening on port " + port)
-	log.Println(http.ListenAndServe(":" + port, nil))
+	log.Println(http.ListenAndServe(":"+port, nil))
 }
