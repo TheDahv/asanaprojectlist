@@ -69,62 +69,7 @@
 
         <div class="project__links">
           <a href="https://app.asana.com/0/{{ project.ID }}" target="_blank">[View in Asana]</a>
-          <a href="#" ng-click="toggleDetails(project)" >[{{ project.showDetails ? "Hide Details" : "Show More Details" }}]</a>
         </div><!-- .project__links -->
-
-        <div class="project__details" ng-show="project.showDetails">
-          <p><b>Notes:</b></p>
-
-          <div class="loading" ng-hide="project.details.Notes != undefined">
-            Loading... <i class="fa fa-spinner fa-spin"></i>
-          </div>
-
-          <p>
-            {{ project.details.Notes }}
-          </p>
-
-          <p><b>Owners:</b></p>
-          <div class="loading" ng-hide="project.details.Members.length > 0">
-            Loading... <i class="fa fa-spinner fa-spin"></i>
-          </div>
-          <ul>
-            <li ng-repeat="member in project.details.Members">
-              {{ member.Name }}
-            </li>
-          </ul>
-
-          <p><b>Contributors:</b></p>
-          <div class="loading" ng-hide="project.taskContributors.length > 0">
-            Loading... <i class="fa fa-spinner fa-spin"></i>
-          </div>
-          <ul>
-            <li
-              ng-repeat="contributor in project.taskContributors">
-              {{ contributor.Name }} - {{ contributor.TaskCount }}
-            </li>
-          </ul>
-
-          <p><b>Tasks:</b></p>
-
-          <div class="loading" ng-hide="project.tasks.length > 0">
-            Loading... <i class="fa fa-spinner fa-spin"></i>
-          </div>
-
-          <ul>
-            <li
-              ng-repeat="task in project.tasks"
-              class="project__task {{ task.Completed ? 'completed' : '' }} {{ task.Name | outputIfMatch:':$':'section'}}"
-              >
-              <a href="https://app.asana.com/0/{{ project.ID }}/{{ task.ID }}" target="_blank">
-                {{ task.Name }}
-              </a>
-              <span ng-show="task.Assignee.Name">
-               &ndash; {{ task.Assignee.Name }}
-              </span>
-            </li>
-          </ul>
-        </div>
-
       </div><!-- .project ng-repeat -->
 
       <div class="completedProjects" ng-show="completedProjects.length > 0">
